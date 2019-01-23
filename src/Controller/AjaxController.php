@@ -34,16 +34,7 @@ class AjaxController extends ControllerBase {
       $content = $block_plugin->build();
 
       if ($content && !Element::isEmpty($content)) {
-        $build = [
-          '#theme' => 'block',
-          '#attributes' => [],
-          '#contextual_links' => [],
-          '#configuration' => $block_plugin->getConfiguration(),
-          '#plugin_id' => $block_plugin->getPluginId(),
-          '#base_plugin_id' => $block_plugin->getBaseId(),
-          '#derivative_plugin_id' => $block_plugin->getDerivativeId(),
-          'content' => $content,
-        ];
+        $build = $content;
       } else {
         // Preserve cache metadata of empty blocks.
         $build = [

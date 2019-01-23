@@ -18,8 +18,8 @@ class AjaxBlockTwigExtension extends \Twig_Extension {
     $id = 'ajax-block--' . \Drupal::service('pathauto.alias_cleaner')->cleanString($block_id) . '--' . time();
     return [
       '#type' => 'container',
-      '#id' => $id,
       '#attributes' => [
+        'id' => $id,
         'data-ajax-block' => $block_id,
       ],
       '#attached' => [

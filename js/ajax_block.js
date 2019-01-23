@@ -5,7 +5,7 @@
       if($ajaxBlocks.length > 0){
         $ajaxBlocks.each(function(index, elem){
           var $block = $(elem);
-          var block_id = $block.data('dataAjaxBlock');
+          var block_id = $block.data('ajaxBlock');
           var target_id = $block.attr('id');
 
           var ajaxSettings = {
