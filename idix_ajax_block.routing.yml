@@ -1,6 +1,6 @@
 idix_ajax_block.get:
   path: '/ajax_block/get'
   defaults:
-    _controller: '\Drupal\idix_ajax_bloc\Controller\AjaxController::ajaxGetBlock'
+    _controller: '\Drupal\idix_ajax_block\Controller\AjaxController::ajaxGetBlock'
   requirements:
     _permission: 'access content'
