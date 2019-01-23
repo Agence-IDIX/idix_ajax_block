@@ -1,0 +1,8 @@
+name: IDIX Ajax Block
+description: 'Système de chargement ajax de blocks.'
+version: '8.x-1.0'
+core: 8.x
+package: IDIX
+type: module
+dependencies:
+  - drupal:pathauto

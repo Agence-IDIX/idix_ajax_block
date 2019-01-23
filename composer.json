@@ -1,0 +1,22 @@
+{
+  "name": "idix/idix_ajax_block",
+  "type": "drupal-custom-module",
+  "description": "Module de chargement ajax de blocks Drupal",
+  "keywords": ["Drupal"],
+  "authors": [
+    {
+      "name": "Sylvain Tixier",
+      "email": "sylvain.tixier@idix.fr",
+      "role": "Maintainer"
+    },
+    {
+      "name": "Nicolas Bugeja",
+      "email": "nicolas.bugeja@idix.fr",
+      "role": "Maintainer"
+    }
+  ],
+  "require": {
+    "drupal/core": "8.6.*",
+    "drupal/pathauto": "^1.2.*"
+  }
+}

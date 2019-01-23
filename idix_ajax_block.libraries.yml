@@ -1,0 +1,5 @@
+ajax_block:
+  js:
+    js/ajax_block.js: {}
+  dependencies:
+    - core/drupal.ajax
