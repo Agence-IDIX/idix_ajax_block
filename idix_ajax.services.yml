@@ -1,0 +1,5 @@
+services:
+  idix_ajax_block.twig_extension:
+    class: Drupal\idix_ajax_block\Twig\AjaxBlockTwigExtension
+    tags:
+      - { name: twig.extension }
