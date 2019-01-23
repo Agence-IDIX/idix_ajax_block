@@ -4,9 +4,11 @@ namespace Drupal\idix_ajax_block\Controller;
 
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Cache\CacheableMetadata;
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Plugin\ContextAwarePluginInterface;
+use Drupal\Core\Render\Element;
 use Symfony\Component\HttpFoundation\Request;
-use Drupal\Core\Block\BlockPluginInterface;
 
 class AjaxController extends ControllerBase {
 
@@ -32,16 +34,16 @@ class AjaxController extends ControllerBase {
       $content = $block_plugin->build();
 
       if ($content && !Element::isEmpty($content)) {
-          $build = [
-            '#theme' => 'block',
-            '#attributes' => [],
-            '#contextual_links' => [],
-            '#configuration' => $block_plugin->getConfiguration(),
-            '#plugin_id' => $block_plugin->getPluginId(),
-            '#base_plugin_id' => $block_plugin->getBaseId(),
-            '#derivative_plugin_id' => $block_plugin->getDerivativeId(),
-            'content' => $content,
-          ];
+        $build = [
+          '#theme' => 'block',
+          '#attributes' => [],
+          '#contextual_links' => [],
+          '#configuration' => $block_plugin->getConfiguration(),
+          '#plugin_id' => $block_plugin->getPluginId(),
+          '#base_plugin_id' => $block_plugin->getBaseId(),
+          '#derivative_plugin_id' => $block_plugin->getDerivativeId(),
+          'content' => $content,
+        ];
       } else {
         // Preserve cache metadata of empty blocks.
         $build = [
