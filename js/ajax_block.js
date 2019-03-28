@@ -17,7 +17,18 @@
             }
           };
 
-          Drupal.ajax(ajaxSettings).execute();
+          var ajaxResult = Drupal.ajax(ajaxSettings).execute();
+          ajaxResult.always(function () {
+            // We execute Drupal.ajax.execute manually
+            // so we have to execute attachBehaviors manually
+            setTimeout(function () {
+              // @warn : pay attention to libraries attached to the new content and JS files particularly
+              // make sure JS dependencies is loaded before calling `Drupal.attachBehaviors`
+              // @info : https://www.drupal.org/project/cdn/issues/2714155
+              // @info : https://www.drupal.org/project/drupal/issues/1988968
+              Drupal.attachBehaviors();
+            });
+          });
         });
       }
     }
