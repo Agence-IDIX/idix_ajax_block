@@ -17,6 +17,7 @@ class AjaxController extends ControllerBase {
 
     $id = $request->request->get('block_id');
     $target_id = $request->request->get('target_id');
+    $configuration['configuration'] = unserialize($request->request->get('parameters'));
 
     /** @var \Drupal\Core\Block\BlockPluginInterface $block_plugin */
     $block_plugin = \Drupal::service('plugin.manager.block')
