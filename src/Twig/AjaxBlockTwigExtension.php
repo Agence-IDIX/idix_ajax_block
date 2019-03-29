@@ -14,13 +14,14 @@ class AjaxBlockTwigExtension extends \Twig_Extension {
     ];
   }
 
-  public static function getBlockPlaceholder($block_id){
+  public static function getBlockPlaceholder($block_id , $parameters = []){
     $id = 'ajax-block--' . \Drupal::service('pathauto.alias_cleaner')->cleanString($block_id) . '--' . time();
     return [
       '#type' => 'container',
       '#attributes' => [
         'id' => $id,
         'data-ajax-block' => $block_id,
+        'data-parameters' => serialize($parameters)
       ],
       '#attached' => [
         'library' => ['idix_ajax_block/ajax_block']
