@@ -7,7 +7,7 @@
           var $block = $(elem);
           var block_id = $block.data('ajaxBlock');
           var target_id = $block.attr('id');
-          var parameters = $block.attr('parameters');
+          var parameters = $block.data('parameters');
 
           var ajaxSettings = {
             url: '/ajax_block/get',
